@@ -1,22 +1,18 @@
-FROM maven:3.8.5-openjdk-17 AS build-env
+FROM maven:3.8.5-openjdk-17 as builder
 
-# Set the working directory to /app
 WORKDIR /app
-# Copy the pom.xml file to download dependencies
-COPY pom.xml ./
-# Copy local code to the container image.
-COPY src ./src
+COPY pom.xml .
+# Use this optimization to cache the local dependencies. Works as long as the POM doesn't change
+RUN mvn dependency:go-offline
 
-# Download dependencies and build a release artifact.
-RUN mvn package -DskipTests
+COPY src/ /app/src/
+RUN mvn package
 
 # Use OpenJDK for base image.
-# https://hub.docker.com/_/openjdk
-# https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
 FROM openjdk:17-jdk-alpine
 
 # Copy the jar to the production image from the builder stage.
-COPY --from=build-env /app/target/personalPortfolio-*.jar /personalPortfolio.jar
+COPY --from=builder /app/target/*.jar /app.jar
 
 # Run the web service on container startup.
-CMD ["java", "-jar", "/personalPortfolio.jar"]
+CMD ["java", "-jar", "/app.jar"]
