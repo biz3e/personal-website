@@ -1,0 +1,27 @@
+steps:
+  - name: 'maven:3.8.5-openjdk-17'
+    args:
+      - install
+    entrypoint: mvn
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/personal-portfolio:$COMMIT_SHA'
+      - .
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - 'gcr.io/$PROJECT_ID/personal-portfolio:$COMMIT_SHA'
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - run
+      - deploy
+      - personal-portfolio
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/personal-portfolio:$COMMIT_SHA'
+      - '--region'
+      - us-central1
+    entrypoint: gcloud
+images:
+  - 'gcr.io/$PROJECT_ID/personal-portfolio:$COMMIT_SHA'
