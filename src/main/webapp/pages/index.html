@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ben Zhou - Homepage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<script src="../main.js"></script>
+</head>
+<body>
+	<!-- Navbar -->
+	<header>
+		<div class="navbar">
+			<div class="container flex">
+				<h1 id="logo"><a href="/">Ben Zhou</a></h1>
+				<nav id="navbar">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<!-- <li><a href="projects">Projects</a></li> -->
+						<li><a href="https://github.com/biz3e" target="_blank">Github</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	
+	<!-- Main -->
+	<div class="main">
+		<div class="container flex">
+			<div class="name">
+				<div class="name-heading">
+					<h1>Ben Zhou</h1>
+					<h4>Software Engineering Student</h4>
+				</div>
+				<img src="/img/pfp.jpg" alt="Profile Picture">
+			</div>
+			<p>I am a <strong>2nd year Software Engineering Student</strong> at <strong>The University of Auckland</strong>.<BR>
+			I love problem solving and enjoy using coding as a means to build applications
+			that are beneficial to myself and others.</p>
+		</div>
+	</div>
+	
+	<!-- Projects -->
+	<div class="projects">
+		<div class="container">
+			<h1>Personal Projects</h1>
+			<hr>
+			<div class="flex">
+				<div class="card">
+					<header class="card-header">
+						<h4>Quick Route</h4>
+					</header>
+					<div class="card-content">
+						<p>A multiple stop route generator written in Java using Spring Web MVC that generates 
+						the most efficient route to visit each location.</p>
+					</div>
+					<div class="card-footer">
+						<input class="card-button" type="button" onclick="navToProject('QuickRoute', 'More')" value="More">
+						<input class="card-button" type="button" onclick="navToProject('QuickRoute', 'Github')" value="Github">
+					</div>
+				</div>
+				<div class="card">
+					<header class="card-header">
+						<h4>A Maze Game</h4>
+					</header>
+					<div class="card-content">
+						<p>A randomly generated maze game with 20 difficulty levels written in GDScript and utilises the Godot game engine.</p>
+					</div>
+					<div class="card-footer">
+						<input class="card-button" type="button" onclick="navToProject('MazeGame', 'More')" value="More">
+						<input class="card-button" type="button" onclick="navToProject('MazeGame', 'Github')" value="Github">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

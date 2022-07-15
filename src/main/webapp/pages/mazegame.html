@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ben Zhou - Maze Game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+<script src="../main.js"></script>
+</head>
+<body>
+	<!-- Navbar -->
+	<header>
+		<div class="navbar">
+			<div class="container flex">
+				<h1 id="logo"><a href="/">Ben Zhou</a></h1>
+				<nav id="navbar">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<!-- <li><a href="projects">Projects</a></li> -->
+						<li><a href="https://github.com/biz3e" target="_blank">Github</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	
+	<div class="nav-pages">
+		<div class="container">
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li>></li>
+			<li><strong>A Maze Game</strong></li>
+		</ul>
+		</div>
+	</div>
+	
+	<!-- Main -->
+	<div class="project-main">
+		<div class="container flex">
+			<div class="project-info">
+				<p>A randomly generated maze game with 20 difficulty levels written in <strong>GDScript</strong> 
+				and utilises the <strong>Godot game engine.</strong></p>
+				<ul>
+					<li><a href="https://github.com/biz3e/A-Maze-Game" target="_blank"><strong>Github</strong></a></li>
+					<li><strong>Stack: </strong>GDScript</li>
+					<li><strong>Game Engine: </strong>Godot</li>
+				</ul>
+			</div>
+			<h2>Features:</h2>
+			<ul class="project-features">
+				<li>Has 20 difficulty levels, where each increase in level increases the number of cells in the maze.</li>
+				<li>The maze is randomly generate each time a level is chosen.</li>
+				<li>Multiple background music choices.</li>
+			</ul>
+			<br>
+			<h2>How it works:</h2>
+			<p>The maze is divided into a specified number of cells based off the chosen difficulty levels and
+			a <strong>hunt and kill algorithm</strong> is used to randomly generate the maze.</p>
+			<p><strong>The algorithm:</strong> From the starting cell, the algorithm randomly choses a direction to travel and travels a one cell 
+			distance in that direction.<br>
+			Each time the algorithm travels a cell, it marks the current cell as visited and randomly chooses another direction to travel.<br>
+			If there are no more unvisited cells adjacent to the current cell, the algorithm chooses a visited cell that is adjacent to at least 1 unvisited cell 
+			and starts randomly choosing a direction to travel again.</p>
+			<br>
+
+		</div>
+	</div>
+	
+</body>
+</html>
