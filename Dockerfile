@@ -1,2 +1,2 @@
-FROM openjdk:openjdk:17.0.2-jdk
+FROM openjdk:17-jdk-alpine
 ARG JAR_FILE=target
