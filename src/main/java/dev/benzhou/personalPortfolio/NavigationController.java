@@ -2,12 +2,13 @@ package dev.benzhou.personalPortfolio;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class NavigationController {
 
-	@RequestMapping(value = { "home", "", "/" })
+	@RequestMapping(value = { "home", "", "/" }, method = RequestMethod.GET)
 	public ModelAndView home() {
 		ModelAndView mv = new ModelAndView();
 
@@ -16,7 +17,7 @@ public class NavigationController {
 		return mv;
 	}
 
-	@RequestMapping(value = { "quickroute", "/quickroute" })
+	@RequestMapping(value = { "quickroute", "/quickroute" }, method = RequestMethod.GET)
 	public ModelAndView quickRoute() {
 		ModelAndView mv = new ModelAndView();
 
@@ -25,7 +26,7 @@ public class NavigationController {
 		return mv;
 	}
 
-	@RequestMapping(value = { "mazegame", "/mazegame" })
+	@RequestMapping(value = { "mazegame", "/mazegame" }, method = RequestMethod.GET)
 	public ModelAndView mazeGame() {
 		ModelAndView mv = new ModelAndView();
 

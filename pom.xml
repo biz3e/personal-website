@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>dev.benzhou</groupId>
 	<artifactId>personalPortfolio</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>personalPortfolio</name>
 	<description>My Personal Portfolio Website</description>
 	<properties>
