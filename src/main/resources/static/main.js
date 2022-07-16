@@ -10,7 +10,10 @@ function navToProject(project, location) {
 		window.location.href = "/mazegame";
 	} else if (project == "MazeGame" && location == "Github"){
 		window.open("https://github.com/biz3e/A-Maze-Game", "_blank").focus();
-	}
-    
+	} 
+}
+
+function toggleMobileMenu(menu) {
+	menu.classList.toggle("open");
 }
 

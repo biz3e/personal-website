@@ -40,6 +40,14 @@ img {
 	width: 100%;
 }
 
+#hamburger-icon {
+	display: none;
+}
+
+#hamburger-icon img {
+	cursor: pointer;
+}
+
 .navbar {
 	background-color: #212121;
 }
@@ -161,6 +169,21 @@ img {
 	background-color: #181818;
 }
 
+.contact .container {
+	padding: 0 80px;
+}
+
+.contact hr {
+	width: 100%;
+	height: 1px;
+	background: #3D3D3D;
+	border: 0;
+}
+
+.contact ul {
+	margin-top: 10px;
+}
+
 .nav-pages {
 	margin-top: 30px;
 }
@@ -235,6 +258,10 @@ img {
 		padding: 0 20px;
 	}
 	
+	.contact .container {
+		padding: 0 20px;
+	}
+	
 	.container {
 		width: 90%;
 		min-width: 480px;
@@ -282,21 +309,52 @@ img {
 		padding: 0 20px;
 	}
 
-	.navbar .flex {
+	#navbar {
+		display: none;
+	}
+	
+	#hamburger-icon {
+		display: block;
+	}
+	
+	#hamburger-icon img {
+		display: block;
+		width: 32px;
+	}
+	
+	#hamburger-icon ul {
+		display: none;
+	}
+	
+	.open ul {
+		display: flex !important;
 		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	
+	.open li {
+		margin: 5px;
+	}
+	
+	.open a {
+		font-size: 18px;
+	}
+	
+	.mobile-menu {
+		display: none;
+		position: absolute;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		left: 0;
+		background-color: #212121;
+		width: 100%;
 	}
 	
 	.navbar h1 {
 	 margin: 5px 0;
 	}
 	
-	.navbar ul {
-		padding-bottom: 5px;
-	}
-	
-	.projects .container {
-		padding: 0 20px;
-	}
 	
 	.card {
 		max-width: 275px;
