@@ -10,10 +10,15 @@ function navToProject(project, location) {
 		window.location.href = "/mazegame";
 	} else if (project == "MazeGame" && location == "Github"){
 		window.open("https://github.com/biz3e/A-Maze-Game", "_blank").focus();
+	} else if (project == "ThisWebsite" && location == "More"){
+		window.location.href = "/thiswebsite";
+	} else if (project == "ThisWebsite" && location == "Github"){
+		window.open("https://github.com/biz3e/personal-website", "_blank").focus();
 	} 
 }
 
-function toggleMobileMenu(menu) {
-	menu.classList.toggle("open");
+function toggleMobileMenu() {
+	document.getElementById("navbar").classList.toggle("open");
+	document.getElementById("hamburger").classList.toggle("open");
 }
 

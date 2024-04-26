@@ -35,4 +35,22 @@ public class NavigationController {
 		return mv;
 	}
 
+	@RequestMapping(value = { "thiswebsite", "/thiswebsite" }, method = RequestMethod.GET)
+	public ModelAndView thisWebsite() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("thiswebsite");
+
+		return mv;
+	}
+
+	@RequestMapping(value = { "about", "/about" }, method = RequestMethod.GET)
+	public ModelAndView aboutMe() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("about");
+
+		return mv;
+	}
+
 }

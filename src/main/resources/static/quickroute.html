@@ -3,6 +3,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Ben Zhou - Quick Route</title>
+<link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <link href="/css/style.css" rel="stylesheet" type="text/css">
 <script src="../main.js"></script>
@@ -13,65 +14,70 @@
 		<div class="navbar">
 			<div class="container flex">
 				<h1 id="logo"><a href="/">Ben Zhou</a></h1>
+				<div id="hamburger-icon" onclick="toggleMobileMenu()">
+					<svg id="hamburger" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+					<line x1="3" y1="12" x2="21" y2="12"></line>
+					<line x1="3" y1="6" x2="21" y2="6"></line>
+					<line x1="3" y1="18" x2="21" y2="18"></line>
+					</svg>
+				</div>
 				<nav id="navbar">
 					<ul>
 						<li><a href="/">Home</a></li>
-						<!-- <li><a href="projects">Projects</a></li> -->
 						<li><a href="https://github.com/biz3e" target="_blank">Github</a></li>
+						<li><a href="/about">About Me</a></li>
 					</ul>
 				</nav>
-				<div id="hamburger-icon" onclick="toggleMobileMenu(this)">
-					<img src="/img/menu.svg" alt="menu">
-					<ul class="mobile-menu">
-						<li><a href="/">Home</a></li>
-						<!-- <li><a href="projects">Projects</a></li> -->
-						<li><a href="https://github.com/biz3e" target="_blank">Github</a></li>
-					</ul>
-				</div>
 			</div>
 		</div>
 	</header>
 	
-	<div class="nav-pages">
-		<div class="container">
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li>></li>
-			<li><strong>Quick Route</strong></li>
-		</ul>
-		</div>
-	</div>
-	
-	<!-- Main -->
-	<div class="project-main">
-		<div class="container flex">
-			<div class="project-info">
-				<p>A multiple stop route generator written in <strong>Java</strong> using <strong>Spring Web MVC</strong> 
-				that generates the most efficient route to visit each location.</p>
-				<ul>
-					<li><a href="https://github.com/biz3e/QuickRoute-WebApp" target="_blank"><strong>Github</strong></a></li>
-					<li><a href="http://quick-route.herokuapp.com/" target="_blank"><strong>Web Application</strong></a></li>
-					<li><strong>Stack: </strong>Java, HTML, CSS</li>
-					<li><strong>Frameworks: </strong>Spring Web MVC</li>
-				</ul>
-			</div>
-			<h2>Features:</h2>
-			<ul class="project-features">
-				<li>Takes a user input of locations and generates the most efficient route to visit each location once.</li>
-				<li>The starting location can be chosen by the user or chosen to optimise efficiency.</li>
-				<li>Calculates route based off either duration or distance.</li>
-				<li>Duration/distance values account for different transport methods (Driving, Transit, Walking) as specified by the user.</li>
+	<main>
+		<div class="nav-pages">
+			<div class="container">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li>></li>
+				<li><strong>Quick Route</strong></li>
 			</ul>
-			<br>
-			<h2>How it works:</h2>
-			<p>The <strong>Google Maps Api</strong> was used to get the data for the duration/distance between locations
-			and a complete weighted digraph was created using those values as weights and the locations as nodes.<BR>
-			A <strong>recursion</strong> based graph traversal algorithm utilises <strong>dynamic programming</strong> 
-			to find the <strong>Shortest Hamiltonian Path</strong> in the digraph.</p>
-			<br>
-
+			</div>
 		</div>
-	</div>
+		
+		<!-- Main -->
+		<div class="main-side">
+			<div class="container flex">
+				<div class="main-sidebar">
+					<p>A multi-stop trip planner written in <strong>Java</strong> using <strong>Spring Web MVC</strong> 
+					that takes an input of locations and generates the most efficient route to visit all the given locations.</p>
+					<ul>
+						<li><a href="https://github.com/biz3e/QuickRoute-WebApp" target="_blank"><strong>Github</strong></a></li>
+						<li><a href="https://app.benzhou.dev/quickroute" target="_blank"><strong>Web Application</strong></a></li>
+						<li><strong>Stack: </strong>Java, HTML, CSS</li>
+						<li><strong>Frameworks: </strong>Spring Web MVC</li>
+					</ul>
+				</div>
+				<h2>Features:</h2>
+				<ul class="ul-bulletpoint">
+					<li>Takes a user input of locations and generates the most efficient route to visit all the given locations.</li>
+					<li>The starting location can be chosen by the user or chosen to optimise efficiency.</li>
+					<li>Calculates route based off either duration or distance.</li>
+					<li>Duration/distance values account for different transport methods (Driving, Transit, Walking) as specified by the user.</li>
+				</ul>
+				<br>
+				<h2>How it works:</h2>
+				<p>The <strong>Google Maps Api</strong> was used to get the data for the duration/distance between locations
+				and a complete weighted digraph was created using those values as weights and the locations as nodes.<BR>
+				A <strong>recursion</strong> based graph traversal algorithm utilises <strong>dynamic programming</strong> 
+				to find the <strong>Shortest Hamiltonian Path</strong> in the digraph.</p>
+				<br>
 	
+			</div>
+		</div>
+	</main>
+	
+	<!-- Footer -->
+	<div class="footer">
+		<small>&copy 2022 Ben Zhou. All Rights Reserved.</small>
+	</div>
 </body>
 </html>

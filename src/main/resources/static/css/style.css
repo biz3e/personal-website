@@ -16,6 +16,10 @@
 	margin: 0;
 }
 
+html {
+	padding-bottom: 10px;
+}
+
 input {
 	-webkit-appearance: none;
 	-webkit-border-radius:0px;
@@ -32,6 +36,10 @@ body {
 	line-height: 1.6em;
 	background-color: #181818;
 	font-size: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
 }
 
 a {
@@ -64,8 +72,19 @@ img {
 	display: none;
 }
 
-#hamburger-icon img {
+#hamburger-icon svg {
 	cursor: pointer;
+	display: block;
+	width: 32px;
+    -webkit-transition: stroke .5s ease-in-out;
+  	-moz-transition: stroke .5s ease-in-out;
+   	-ms-transition: stroke .5s ease-in-out;
+   	-o-transition: stroke .55s ease-in-out;
+   	transition: stroke .5s ease-in-out;
+}
+
+header {
+	width: 100%;
 }
 
 .navbar {
@@ -127,7 +146,7 @@ img {
 	flex-direction: row;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
-	align-items: stretch;
+	align-items: center;
 }
 
 .projects h1 {
@@ -143,9 +162,10 @@ img {
 
 .card {
 	min-width: 275px;
+	min-height: 230px;
 	width: 45%;
 	background-color: #212121;
-	border-radius: 10px;
+	border-radius: 8px;
 	margin: 10px;
 	overflow: hidden;
 	display: flex;
@@ -153,28 +173,28 @@ img {
 	justify-content: space-between;
 }
 
-.card-header{
+.card-header {
 	text-align: center;
+	border-bottom: 1px solid #3D3D3D;
 }
 
-.card-content{
+.card-content {
 	padding: 0 10px;
 }
 
-.card-footer{
+.card-footer {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
-	font-size: 18px;
 }
 
-.card-button{
+.card-button {
 	width: 50%;
 	color: #FFFFFF;
 	background-color: #212121;
 	border: none;
 	text-align: center;
-	font-size:18px;
+	font-size: 16px;
 	padding: 10px;
 	border-top: 1px solid #3D3D3D;
 }
@@ -220,30 +240,51 @@ img {
 	margin-right: 5px;
 }
 
-.project-main {
+.main-side{
 	margin: 0 auto;
 }
 
-.project-main .flex {
+.main-side .flex {
 	padding: 0 80px;
 	align-items: start;
 }
 
-.project-info {
+.main-sidebar {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: baseline;
 }
 
-.project-info ul {
+.main-sidebar ul {
+	margin-left: 2em;
+	min-width: fit-content;
+}
+
+.sidebar {
+	min-width: fit-content;
 	margin-left: 1em;
-	min-width: 280px;
 }
 
-.project-features {
+.sidebar small, #skills {
+	margin: 0;
+}
+
+.sidebar h3 {
+	margin: 5px 0;
+}
+
+.ul-bulletpoint {
 	margin-left: 2em;
 	list-style-type: disc;
 	list-style-position: outside;
+}
+
+.no-margin {
+	margin-left: 0 !important;
+}
+
+main {
+	min-height: 100vh;
 }
 
 .container {
@@ -261,6 +302,21 @@ img {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+}
+
+.error-main .flex {
+	text-align: center;
+}
+
+.footer{
+	display: flex;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	justify-content:center;
+   	align-items:center;
+   	background-color: #181818;
 }
 
 /* Tablets and under */
@@ -298,12 +354,25 @@ img {
 		width: 45%;
 	}
 	
-	.project-info {
+	.main-sidebar {
 		flex-direction: column;
 		align-items: start;
 	}
 	
-	.project-info ul {
+	.sidebar {
+		margin-left: 0;
+		min-width: 0;
+	}
+	
+	.sidebar #skills {
+		margin-top: 10px;
+	}
+	
+	.sidebar .ul-bulletpoint{
+		margin-left: 2em;
+	}
+	
+	.main-sidebar ul {
 		margin-left: 0;
 		min-width: 0;
 	}
@@ -312,7 +381,7 @@ img {
 		padding: 0 20px;
 	}
 	
-	.project-main .flex {
+	.main-side .flex {
 		padding: 0 20px;
 	}
 	
@@ -329,52 +398,52 @@ img {
 		padding: 0 20px;
 	}
 
+	.navbar ul {
+		flex-direction: column;
+		background-color: #212121;
+		max-height: 0;
+		overflow: hidden;
+	    -webkit-transition: max-height .5s ease-in-out;
+  	  	-moz-transition: max-height .5s ease-in-out;
+    	-ms-transition: max-height .5s ease-in-out;
+    	-o-transition: max-height .55s ease-in-out;
+    	transition: max-height .5s ease-in-out;
+	}
+
+	.navbar li {
+		display:block;
+    	float:none;
+    	width:auto;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
 	#navbar {
-		display: none;
+		position: absolute;
+		top: 100%;
+    	right: 0;
+    	left: 0;
 	}
 	
+	.open {
+		stroke: #3D3D3D;
+	}
+	
+	.open ul {
+		max-height: 200px;
+	}
+	
+	.navbar {
+		position: relative;
+	}
+
 	#hamburger-icon {
 		display: block;
 	}
 	
-	#hamburger-icon img {
-		display: block;
-		width: 32px;
-	}
-	
-	#hamburger-icon ul {
-		display: none;
-	}
-	
-	.open ul {
-		display: flex !important;
-		flex-direction: column;
-		align-items: center;
-		justify-content: flex-start;
-	}
-	
-	.open li {
-		margin: 5px;
-	}
-	
-	.open a {
-		font-size: 18px;
-	}
-	
-	.mobile-menu {
-		display: none;
-		position: absolute;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		left: 0;
-		background-color: #212121;
-		width: 100%;
-	}
-	
 	.navbar h1 {
-	 margin: 5px 0;
+	 	margin: 5px 0;
 	}
-	
 	
 	.card {
 		max-width: 275px;
